@@ -3,6 +3,7 @@
 * {
   padding: 0;
   margin: 0;
+
   box-sizing: border-box;
   font-family: Outfit;
 }
@@ -18,4 +19,6 @@
   100% {
     opacity: 1;
   }
+}
+@media (max-width: 768px) {
 }

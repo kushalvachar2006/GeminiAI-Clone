@@ -1,27 +1,31 @@
 .main {
   flex: 1;
-  min-height: 100vh;
-  padding-bottom: 15vh;
+  max-width: 100%; /* Use 100% width for responsiveness */
+  max-height: 100px;
+  padding-bottom: 8vh;
   position: relative;
 }
+
 .main .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 22px;
+  font-size: 1.5rem; /* Use rem for better scalability */
   padding: 20px;
   color: #585858;
 }
+
 .main .toggle {
   background-color: white;
   border: 1px solid #585858;
   height: 40px;
   width: 80px;
   border-radius: 40px;
-  margin-left: 160vh;
+  margin-left: auto; /* Align toggle to the right */
   position: relative;
   cursor: pointer;
 }
+
 .toggle .switch {
   background-color: black;
   height: 40px;
@@ -30,27 +34,24 @@
   margin-top: -1px;
   transition: transform 0.5s ease;
 }
-/* .toggle:hover .switch {
-  transform: translateX(60px);
-  background-color: white;
-}
-.toggle:hover {
-  background-color: black;
-} */
+
 .main .nav img {
   border-radius: 50%;
   width: 40px;
 }
+
 .main-container {
+  max-height: 600px;
   max-width: 900px;
   margin: auto;
 }
+
 .main .greet {
-  margin: 50px 0px;
-  font-size: 56px;
+  margin: 50px 0;
+  font-size: 3.5rem;
   color: #c4c7c5;
   font-weight: 500;
-  padding: 10px;
+  padding: 5px;
 }
 
 .main .greet span {
@@ -58,20 +59,23 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .main .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
   padding: 20px;
 }
+
 .main .card {
-  height: 200px;
-  padding: 15px;
+  height: 150px;
+  padding: 10px;
   background-color: #f0f4f9;
   border-radius: 10px;
   position: relative;
   cursor: pointer;
 }
+
 .main .card img {
   width: 35px;
   padding: 5px;
@@ -80,22 +84,25 @@
   bottom: 10px;
   right: 10px;
 }
+
 .main .card p {
   color: #585858;
-  font-size: 17px;
+  font-size: 1rem; /* Use rem for better scalability */
 }
 
 .main .card:hover {
   background-color: #dfe4ea;
 }
+
 .main .main-bottom {
   position: absolute;
-  bottom: 0;
+  bottom: 5;
   width: 100%;
   max-width: 900px;
-  padding: 0px 20px;
+  padding: 0 20px;
   margin: auto;
 }
+
 .search-box {
   display: flex;
   align-items: center;
@@ -105,60 +112,69 @@
   padding: 10px 20px;
   border-radius: 50px;
 }
+
 .search-box img {
   width: 24px;
   cursor: pointer;
 }
+
 .search-box input {
   flex: 1;
   background: transparent;
   border: none;
   outline: none;
   padding: 8px;
-  font-size: 18px;
+  font-size: 1rem; /* Use rem for better scalability */
 }
+
 .search-box div {
   display: flex;
   align-items: center;
   gap: 15px;
 }
+
 .main .bottom-info {
-  font-size: 13px;
+  font-size: 0.8rem; /* Use rem for better scalability */
   margin: 15px auto;
   text-align: center;
   font-weight: 300;
 }
 
 .result {
-  padding: 0px 5%;
+  padding: 0 5%;
   max-height: 70vh;
   overflow-y: auto;
 }
+
 .result::-webkit-scrollbar {
   display: none;
 }
 
 .result-title {
-  margin: 40px 0px;
+  margin: 40px 0;
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 .result img {
   width: 40px;
   border-radius: 50%;
 }
+
 .result-data {
   display: flex;
   align-items: start;
   gap: 20px;
 }
+
 .loader {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .loader hr {
   border-radius: 4px;
   border: none;
@@ -168,6 +184,7 @@
   height: 20px;
   animation: loader 3s infinite linear;
 }
+
 @keyframes loader {
   0% {
     background-position: -800px 0px;
@@ -176,23 +193,35 @@
     background-position: 800px 0px;
   }
 }
+
 .result-data p {
-  font-size: 17px;
+  font-size: 1.1rem; /* Use rem for better scalability */
   font-weight: 300;
   line-height: 1.8;
 }
-@media (max-width: 600px) {
+
+@media (max-width: 1200px) {
   .main-bottom input {
-    flex: none;
-    width: 150px;
+    width: 120px;
   }
-  .main-bottom img {
-    width: 20px;
+}
+
+@media (max-width: 768px) {
+  .main-bottom {
+    flex-direction: column; /* Change to column for mobile */
+    align-items: stretch;
   }
+
+  .main-bottom input {
+    width: 100%;
+  }
+
   .search-box {
-    padding: 5px 10px;
+    flex-direction: column; /* Change to column for mobile */
+    padding: 10px;
   }
+
   .search-box div {
-    gap: 5px;
+    gap: 10px;
   }
 }
